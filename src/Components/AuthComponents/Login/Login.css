@@ -1,0 +1,50 @@
+.login {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login .lottie-anim {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+.login .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(238, 238, 255, 0.7);
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+.login .form-container {
+    position: relative;
+    z-index: 3;
+    padding: 30px 20px;
+    width: 90%;
+    height: 90%;
+    align-content: center;
+    justify-content: center;
+}
+.login .form-container h3{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.login .register-text {
+    justify-content: center;
+    display: flex;
+}
+.login .register-text p{
+    margin: 0 4px;
+}
+.login .register-text .click-register{
+    color: #3765DD;
+    cursor: pointer;
+}

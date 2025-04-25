@@ -1,0 +1,26 @@
+.custom-dropdown {
+    height: 50px;
+    display: flex;
+    width: 100%;
+    margin: 15px;
+    justify-content: center;
+}
+.custom-dropdown .custom-dropdown-row {
+    display: flex;
+    width: 45%;
+    justify-content: space-between;
+}
+.custom-dropdown .left-dd, .right-dd{
+    padding: 10px;
+    background-color: #eef;
+    border: solid #2E8B57 2px;
+    border-radius: 10px;
+    align-items: center;
+    align-content: center;
+}
+.custom-dropdown .dropdown{
+    background: transparent;
+    border: none;
+}
+
+
