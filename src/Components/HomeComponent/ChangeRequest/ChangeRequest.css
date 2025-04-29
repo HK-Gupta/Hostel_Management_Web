@@ -1,0 +1,81 @@
+.all-requests{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 15px 0;
+    align-items: center;
+}
+.all-requests .request-cards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.all-requests .request-card {
+    background: linear-gradient(to bottom, rgba(16, 87, 200, 0.3), #eef);
+    border-radius: 35px;
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    padding: 20px;
+}
+.all-requests .div-row {
+    display: flex;
+}
+.all-requests .left-col{
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.all-requests img{
+    width: 150px;
+    margin: 15px;
+}
+.all-requests .right-col{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+}
+.all-requests h3{
+    font-size: 35px;
+    font-weight: 700;
+}
+.all-requests h4{
+    font-size: 30px;
+    font-weight: 600;
+}
+.all-requests p{
+    font-size: 25px;
+    font-weight: 500;
+}
+.all-requests .comment-issue-row{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+.all-requests .bold-p{
+    font-weight: 600;
+    margin: 0 10px;
+}
+.all-requests .asked-for, .reason{
+    display: flex;
+    margin: 25px 10px;
+    justify-content: start;
+}
+.all-requests .bold-text {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0 10px 0 0;
+}
+.all-requests .red-text{
+    font-size: 25px;
+    color: #ff0a0a;
+    margin: 0 0 0 25px;
+}
+.all-requests .two-buttons{
+    display: flex;
+}

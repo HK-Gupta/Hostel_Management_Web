@@ -1,0 +1,14 @@
+.create-issue {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.create-issue .issue-div {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.create-issue .issue-text{
+    font-size: 25px;
+    font-weight: 600;
+} 

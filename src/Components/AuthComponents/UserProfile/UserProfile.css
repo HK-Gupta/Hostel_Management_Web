@@ -1,0 +1,51 @@
+.user-profile{
+    display: flex;
+    margin: 15px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.user-profile .detailed-view{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.user-profile .name-img{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;;
+}
+.user-profile img{
+    width: 150px;
+    height: 150px;
+}
+.user-profile h3{
+    font-size: 30px;
+    font-weight: 700;
+}
+.user-profile .room-block-component{
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    margin: 30px 10px;
+}
+.user-profile .room-number, .block-number{
+    padding: 20px;
+    border: solid #000 1.5px;
+    border-radius: 15px;
+}
+.user-profile .other-detials{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.user-profile .save-logout{
+    display: flex;
+    width: 100%;
+}
+/* .user-profile .logout{
+    background: #ff5665;
+} */

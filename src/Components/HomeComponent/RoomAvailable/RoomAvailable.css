@@ -1,0 +1,50 @@
+.rooms-available {
+    margin: 15px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rooms-available .each-room {
+    display: flex;
+    width: 80vw;
+    padding: 5px 25px;
+    border: solid #11212E 2px;
+    border-radius: 30px 30px 0px 30px;
+}
+.rooms-available .left-part{
+    width: 40%;
+}
+.rooms-available .left-part img{
+    width: 220px;
+    height: 180px;
+}
+.rooms-available .middle-part{
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+}
+.rooms-available .right-part {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+}
+.rooms-available .status {
+    display: flex;
+    width: 80%;
+}
+.rooms-available p{
+    font-size: 30px;
+}
+.rooms-available .current-status {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 0 0 0 20px;
+    color: #fff;
+    background-color: #0dc984;
+    border-radius: 10px;
+}

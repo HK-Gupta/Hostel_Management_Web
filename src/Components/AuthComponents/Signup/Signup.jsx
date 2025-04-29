@@ -15,6 +15,11 @@ function Signup() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [emailValue, setEmailValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
+
+    const handleUserRegistration = () =>{
+        console.log("Signup button clicked")
+    }
+
     return (
       <div className='signup'>
           <Lottie className="lottie-anim" animationData={home} loop={true}/>
@@ -66,7 +71,7 @@ function Signup() {
             />
             <CustomDropDown/>
             <CustomButton
-                btnText="Register"/>
+                btnText="Register" onClick={handleUserRegistration}/>
             <div className="register-text">
                 <p>Don't have an account?</p>
                 <p className='click-register' onClick={() => navigate('/login')}>Click to Login</p>

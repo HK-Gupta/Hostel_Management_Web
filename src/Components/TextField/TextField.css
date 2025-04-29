@@ -1,18 +1,21 @@
 .text-field{
     margin: 15px;
     display: flex;
+    width: 100%;
     flex-direction: column;
     align-items: center;
 }
 .text-field p{
-    font-size: 15px;
+    font-size: 20px;
     width: 40%;
+    font-weight: 600;
     color: #444;
 }
 .text-field .input-text{
     padding: 10px 15px;
     margin: 2px;
     width: 40%;
+    font-size: 18px;
     background: #eef;
     border: #11212E solid 1px;
     border-radius: 10px;

@@ -1,0 +1,72 @@
+.hostel-fees {
+    margin: 5% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    position: relative; /* important for stacking */
+    overflow: hidden; /* clip the image if needed */
+}
+
+.background-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* image covers entire div */
+    top: 0;
+    left: 0;
+    z-index: 0; /* behind everything */
+    opacity: 0.3; /* optional: make it light */
+}
+
+.hostel-fees .content {
+    position: relative; /* bring content above image */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1;
+    min-width: 70%;
+    border-radius: 20px;
+    border: solid #3765DD 2px;
+    background: rgb(109, 167, 255, 0.8);
+}
+.hostel-fees .column-data{
+    width: 100%;
+}
+.hostel-fees .column-data .heading{
+    font-size: 25px;
+    font-weight: 700;
+    padding: 10px 0;
+}
+.hostel-details p, .payment-data p {
+    color: #000;
+    font-size: 21px;
+}
+.hostel-fees .hostel-details {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.hostel-fees .payment-data {
+    display: flex;
+    width: 100%;
+    padding: 5px 0;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.hostel-fees .line{
+    margin: 20px 0;
+    background: #000;
+    height: 2px;
+}
+.hostel-fees .final-total {
+    display: flex;
+    width: 100%;
+    padding: 5px 0;
+    justify-content: space-between;
+    align-content: space-between;
+}

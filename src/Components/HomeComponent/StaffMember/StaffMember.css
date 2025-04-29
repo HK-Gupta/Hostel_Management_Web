@@ -1,0 +1,16 @@
+.staff-members{
+    display: flex;
+    width: 100%;
+    margin: 15px 0;
+}
+.staff-members .column-staffs{
+    display: flex;
+    width: 100%;
+    align-items: start;
+    justify-content: center;
+}
+.staff-members .row-staff {
+    width: 90%;
+    display: flex;
+}
+

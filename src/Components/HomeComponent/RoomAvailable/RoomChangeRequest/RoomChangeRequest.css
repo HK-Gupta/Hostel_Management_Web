@@ -1,0 +1,47 @@
+.room-change-request {
+    display: flex;
+    margin: 15px;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+.room-change-request .request-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.room-change-request .column-component{
+    width: 100%;
+    margin: 20px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.room-change-request .room-block-component{
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+    margin: 30px 10px;
+}
+.room-change-request .room-number {
+    padding: 20px;
+    border: solid #000 1.5px;
+    border-radius: 15px;
+}
+.room-change-request .block-number {
+    padding: 20px;
+    border: solid #000 1.5px;
+    border-radius: 15px;
+    margin: 0 15px;
+}
+.room-change-request h3{
+    font-size: 30px;
+    font-weight: 700;
+}
+.room-change-request p{
+    font-size: 25px;
+    font-weight: 500;
+}

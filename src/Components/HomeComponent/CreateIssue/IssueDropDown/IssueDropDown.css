@@ -1,26 +1,22 @@
-.custom-dropdown {
+.issue-dd {
     height: 50px;
     display: flex;
     width: 100%;
-    margin: 15px;
+    margin: 25px 15px;
     justify-content: center;
 }
-.custom-dropdown .custom-dropdown-row {
-    display: flex;
+.issue-dd .dd{
     width: 40%;
-    justify-content: space-between;
-}
-.custom-dropdown .left-dd, .right-dd{
-    padding: 10px;
+    padding: 10px ;
     background-color: #eef;
-    border: solid #2E8B57 2px;
+    border: solid #000 1px;
     border-radius: 10px;
+    display: flex;
     align-items: center;
     align-content: center;
+    justify-content: space-between;
 }
-.custom-dropdown .dropdown{
+.issue-dd .dropdown{
     background: transparent;
     border: none;
 }
-
-

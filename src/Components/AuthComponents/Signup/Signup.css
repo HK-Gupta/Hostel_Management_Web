@@ -1,7 +1,7 @@
 .signup {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -36,6 +36,7 @@
 .signup .form-container h3{
     margin-bottom: 20px;
     text-align: center;
+    font-size: 25px;
 }
 .signup .register-text {
     justify-content: center;

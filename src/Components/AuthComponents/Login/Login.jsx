@@ -10,6 +10,10 @@ function Login() {
   const navigate = useNavigate();
   const [emailValue, setEmailValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
+
+  const handleLogin = () => {
+    console.log("Login Button clicked");
+  }
   return (
     <div className='login'>
         <Lottie className="lottie-anim" animationData={home} loop={true}/>
@@ -32,7 +36,7 @@ function Login() {
             inputPlaceholder = 'Enter your Email Id'
           />
           <CustomButton
-            btnText="Login"/>
+            btnText="Login" onClick={handleLogin}/>
           <div className="register-text">
             <p>Don't have an account?</p>
             <p className='click-register' onClick={() => navigate('/signup')}>Click to Register</p>

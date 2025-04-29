@@ -1,0 +1,16 @@
+.create-staff {
+    display: flex;
+    margin: 15px;
+    width: 100%;
+}
+.create-staff .form-details{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.create-staff h3 {
+    font-size: 30px;
+    font-weight: 700;
+}

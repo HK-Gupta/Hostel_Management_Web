@@ -1,0 +1,53 @@
+.user-details {
+    
+    border-radius: 30px 30px 0px 30px;
+    border: 2px solid #11212E;
+    background: #fff;
+    height: 20vh;
+    box-shadow: 1px 1px 5px 1px grey;
+}
+.user-details .partitions {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 20px 40px;
+    height: 75%;
+}
+.user-details .left-part{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}       
+.user-details .user-name p{
+    font-size: 30px;
+    color: #11212E;
+    font-weight: 700;
+}
+.user-details .block-room-no p{
+    font-size: 21px;
+    color: #11212E;
+}
+.user-details .right-part{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-details .create-issue {
+    background: #11212E;
+    border-radius: 100%;
+    width: 9.5vh;
+    height: 9.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user-details .icon-img{
+    width: 6vh;
+    height: 6vh;
+    color: #fff;
+}
+.user-details .right-part p{
+    font-size: 21px;
+    font-weight: 700;
+}
