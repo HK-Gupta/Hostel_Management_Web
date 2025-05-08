@@ -41,6 +41,7 @@
 .signup .register-text {
     justify-content: center;
     display: flex;
+    font-size: 20px;
 }
 .signup .register-text p{
     margin: 0 4px;

@@ -5,14 +5,22 @@ import CustomButton from '../../CustomButton/CustomButton';
 import Lottie from 'lottie-react';
 import home from '../../../assets/json/home.json'
 import {useNavigate} from 'react-router-dom'
+import {ApiCalls} from '../../../api/apiCalls.js';
 
 function Login() {
   const navigate = useNavigate();
-  const [emailValue, setEmailValue] = useState('');
-  const [passwordValue, setPasswordValue] = useState('');
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
 
-  const handleLogin = () => {
-    console.log("Login Button clicked");
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleLogin = () =>{
+    ApiCalls.handleLogin(formData.email, formData.password, navigate);
   }
   return (
     <div className='login'>
@@ -24,15 +32,17 @@ function Login() {
           <TextField 
             fieldName = 'Email' 
             inputType='text'
-            inputValue = {emailValue} 
-            setInputValue = {setEmailValue} 
+            name='email'
+            inputValue = {formData.email} 
+            setInputValue = {handleChange} 
             inputPlaceholder = 'Enter your Email Id'
           />
           <TextField 
             fieldName = 'Password' 
             inputType='password'
-            inputValue = {passwordValue} 
-            setInputValue = {setPasswordValue} 
+            name='password'
+            inputValue = {formData.password} 
+            setInputValue = {handleChange} 
             inputPlaceholder = 'Enter your Email Id'
           />
           <CustomButton

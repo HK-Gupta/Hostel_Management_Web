@@ -43,6 +43,7 @@
 .all-requests h3{
     font-size: 35px;
     font-weight: 700;
+    margin-bottom: 10px;
 }
 .all-requests h4{
     font-size: 30px;
@@ -63,7 +64,7 @@
 }
 .all-requests .asked-for, .reason{
     display: flex;
-    margin: 25px 10px;
+    margin: 20px 10px;
     justify-content: start;
 }
 .all-requests .bold-text {

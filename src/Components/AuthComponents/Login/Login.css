@@ -41,6 +41,7 @@
 .login .register-text {
     justify-content: center;
     display: flex;
+    font-size: 20px;
 }
 .login .register-text p{
     margin: 0 4px;

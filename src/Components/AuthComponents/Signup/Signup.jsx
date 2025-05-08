@@ -6,18 +6,28 @@ import Lottie from 'lottie-react';
 import home from '../../../assets/json/home.json'
 import CustomDropDown from '../../CustomDropDown/CustomDropDown';
 import {useNavigate} from 'react-router-dom'
+import { ApiCalls } from '../../../api/apiCalls';
 
 function Signup() {
     const navigate = useNavigate();
-    const [userName, setUserName] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [emailValue, setEmailValue] = useState('');
-    const [passwordValue, setPasswordValue] = useState('');
+    const [formData, setFormData] = useState({
+        userName: '',
+        firstName: '',
+        lastName: '',
+        phoneNo: '',
+        email: '',
+        password: '',
+        blockNumber: '',
+        roomNumber: '',
+    });
+    
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
 
     const handleUserRegistration = () =>{
-        console.log("Signup button clicked")
+        ApiCalls.registerStudent(formData, navigate);
     }
 
     return (
@@ -30,46 +40,55 @@ function Signup() {
             <TextField 
                 fieldName = 'Username' 
                 inputType='text'
-                inputValue = {userName} 
-                setInputValue = {setUserName} 
-                inputPlaceholder = 'Enter your Email Id'
+                name='userName'
+                inputValue = {formData.userName} 
+                setInputValue = {handleChange} 
+                inputPlaceholder = 'Enter your User name'
             />
             <TextField 
                 fieldName = 'First Name' 
                 inputType='text'
-                inputValue = {firstName} 
-                setInputValue = {setFirstName} 
-                inputPlaceholder = 'Enter your Email Id'
+                name='firstName'
+                inputValue = {formData.firstName} 
+                setInputValue = {handleChange} 
+                inputPlaceholder = 'Enter your First Name'
             />
             <TextField 
                 fieldName = 'Last Name' 
                 inputType='text'
-                inputValue = {lastName} 
-                setInputValue = {setLastName} 
-                inputPlaceholder = 'Enter your Email Id'
+                name='lastName'
+                inputValue = {formData.lastName} 
+                setInputValue = {handleChange} 
+                inputPlaceholder = 'Enter your Last Name'
             />
             <TextField 
                 fieldName = 'Phone Number' 
                 inputType='text'
-                inputValue = {phoneNumber} 
-                setInputValue = {setPhoneNumber} 
+                name='phoneNo'
+                inputValue = {formData.phoneNo} 
+                setInputValue = {handleChange} 
                 inputPlaceholder = 'Enter your Email Id'
             />
             <TextField 
                 fieldName = 'Email'
                 inputType='text'
-                inputValue = {emailValue} 
-                setInputValue = {setEmailValue} 
+                name='email'
+                inputValue = {formData.email} 
+                setInputValue = {handleChange} 
                 inputPlaceholder = 'Enter your Email Id'
             />
             <TextField 
                 fieldName = 'Password' 
                 inputType='password'
-                inputValue = {passwordValue} 
-                setInputValue = {setPasswordValue} 
+                name='password'
+                inputValue = {formData.password} 
+                setInputValue = {handleChange} 
                 inputPlaceholder = 'Enter your Email Id'
             />
-            <CustomDropDown/>
+            <CustomDropDown  
+                blockNumber={formData.blockNumber} 
+                roomNumber={formData.roomNumber} 
+                setFormData={setFormData}/>
             <CustomButton
                 btnText="Register" onClick={handleUserRegistration}/>
             <div className="register-text">

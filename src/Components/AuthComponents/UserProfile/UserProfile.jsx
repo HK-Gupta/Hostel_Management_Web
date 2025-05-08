@@ -3,13 +3,22 @@ import './UserProfile.css'
 import person from '../../../assets/images/person.png'
 import TextField from '../../TextField/TextField.jsx'
 import CustomButton from '../../CustomButton/CustomButton.jsx'
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
+import { ApiCalls } from '../../../api/apiCalls.js'
 
 function UserProfile() {
+  const navigate = useNavigate();
   const [userEmail, setUserEmail] = useState('');
   const [userName, setUserName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+
+  const logoutUser = () => {
+    ApiCalls.handleLogout(navigate);
+  }
+
   return (
     <div className='user-profile'>
       <div className="detailed-view">
@@ -58,7 +67,7 @@ function UserProfile() {
               inputType='text'
             />   
           <div className="save-logout">
-            <CustomButton btnText="Logout" isLogout={true}/>
+            <CustomButton btnText="Logout" isLogout={true} onClick={logoutUser}/>
             <CustomButton btnText="Save"/>
           </div>
         </div>

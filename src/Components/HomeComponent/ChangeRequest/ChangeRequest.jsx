@@ -33,7 +33,7 @@ function ChangeRequest() {
           </div>
           <div className="two-buttons">
             <CustomButton btnText='Reject' isLogout={true}/>
-            <CustomButton btnText='Approve'/>
+            <CustomButton btnText='Approve' className='green-btn'/>
           </div>
         </div>
       </div>

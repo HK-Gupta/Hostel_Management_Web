@@ -1,5 +1,5 @@
 import React from 'react'
-import {Routes, Route} from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Login from './Components/AuthComponents/Login/Login'
 import Signup from './Components/AuthComponents/Signup/Signup'
 import Home from './Components/HomeComponent/Home/Home'
@@ -13,27 +13,38 @@ import ChangeRequest from './Components/HomeComponent/ChangeRequest/ChangeReques
 import CreateIssue from './Components/HomeComponent/CreateIssue/CreateIssue.jsx'
 import RoomChangeRequest from './Components/HomeComponent/RoomAvailable/RoomChangeRequest/RoomChangeRequest.jsx'
 import UserProfile from './Components/AuthComponents/UserProfile/UserProfile.jsx'
+import Otp from './Components/AuthComponents/OTP/Otp.jsx'
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useAuth } from './hooks/useAuth';
 
 function App() {
+  const { isAuthenticated } = useAuth();
+
   return (
     <div>
-      <Navbar/>
+      {isAuthenticated && <Navbar />}
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/login' element={<Login/>} />
-        <Route path='/signup' element={<Signup/>} />
-        <Route path='/rooms-available' element={<RoomAvailable/>}/>
-        <Route path='/all-issues' element={<AllIssues/>}/>
-        <Route path='/staff-members' element={<StaffMembers/>}/>
-        <Route path='/create-staff' element={<CreateStaff/>}/>
-        <Route path='/hostel-fees' element={<HostelFees/>}/>
-        <Route path='/change-room' element={<ChangeRequest/>}/>
-        <Route path='/create-issue' element={<CreateIssue/>}/>
-        <Route path='/rooms-available/room-change-request' element={<RoomChangeRequest/>}/>
-        <Route path='/user-profile' element={<UserProfile/>}/>
+        <Route path="/" element={isAuthenticated ? <Home /> : <Navigate to="/login" />} />
+        <Route path="/login" element={!isAuthenticated ? <Login /> : <Navigate to="/" />} />
+        <Route path="/signup" element={!isAuthenticated ? <Signup /> : <Navigate to="/" />} />
+        <Route path="/otp" element={<Otp />} />
+
+        {/* Protected routes */}
+        <Route path="/rooms-available" element={isAuthenticated ? <RoomAvailable /> : <Navigate to="/login" />} />
+        <Route path="/all-issues" element={isAuthenticated ? <AllIssues /> : <Navigate to="/login" />} />
+        <Route path="/staff-members" element={isAuthenticated ? <StaffMembers /> : <Navigate to="/login" />} />
+        <Route path="/create-staff" element={isAuthenticated ? <CreateStaff /> : <Navigate to="/login" />} />
+        <Route path="/hostel-fees" element={isAuthenticated ? <HostelFees /> : <Navigate to="/login" />} />
+        <Route path="/change-room" element={isAuthenticated ? <ChangeRequest /> : <Navigate to="/login" />} />
+        <Route path="/create-issue" element={isAuthenticated ? <CreateIssue /> : <Navigate to="/login" />} />
+        <Route path="/rooms-available/room-change-request" element={isAuthenticated ? <RoomChangeRequest /> : <Navigate to="/login" />} />
+        <Route path="/user-profile" element={isAuthenticated ? <UserProfile /> : <Navigate to="/login" />} />
       </Routes>
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
