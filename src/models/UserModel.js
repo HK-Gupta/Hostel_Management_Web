@@ -7,7 +7,7 @@ export default class UserModel {
     lastName = '',
     email = '',
     password = '',
-    phoneNumber = '',
+    phoneNo = '',
     blockNumber = '',
     roomNumber = '',
   } = {}) {
@@ -18,7 +18,7 @@ export default class UserModel {
     this.lastName = lastName;
     this.email = email;
     this.password = password;
-    this.phoneNumber = phoneNumber;
+    this.phoneNo = phoneNo;
     this.blockNumber = blockNumber;
     this.roomNumber = roomNumber;
   }

@@ -24,6 +24,7 @@
 .user-profile h3{
     font-size: 30px;
     font-weight: 700;
+    text-align: center;
 }
 .user-profile .room-block-component{
     display: flex;

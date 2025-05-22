@@ -3,66 +3,83 @@ import './UserProfile.css'
 import person from '../../../assets/images/person.png'
 import TextField from '../../TextField/TextField.jsx'
 import CustomButton from '../../CustomButton/CustomButton.jsx'
-import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import { ApiCalls } from '../../../api/apiCalls.js'
+import UserModel from '../../../models/UserModel.js'
 
 function UserProfile() {
   const navigate = useNavigate();
-  const [userEmail, setUserEmail] = useState('');
-  const [userName, setUserName] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const user = UserModel.fromStorage();
+  console.log(user);
+  const [formData, setFormData] = useState({
+          userName: `${user.userName}`,
+          firstName: `${user.firstName}`,
+          lastName: `${user.lastName}`,
+          phoneNo: `${user.phoneNo}`,
+          email: `${user.email}`,
+      });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   const logoutUser = () => {
     ApiCalls.handleLogout(navigate);
   }
+
 
   return (
     <div className='user-profile'>
       <div className="detailed-view">
         <div className="name-image">
           <img src={person} alt="" />
-          <h3>User Name</h3>
+          <h3>{user.userName}</h3>
         </div>
         <div className="room-block-component">
-          <div className="room-number">Room No.:</div>
-          <div className="block-number">Block No.:</div>
+          <div className="room-number">Room No.: {user.roomNumber}</div>
+          <div className="block-number">Block No.: {user.blockNumber}</div>
         </div>
         <div className="other-detials">
           <TextField 
             fieldName=''
-            inputValue={userEmail}
-            setInputValue={setUserEmail}
+            name='email'
+            inputValue={formData.email}
+            setInputValue={handleChange}
             inputPlaceholder={''}
             inputType='text'
+            readOnly={true}
           />       
           <TextField 
             fieldName=''
-            inputValue={userName}
-            setInputValue={setUserName}
+            name='userName'
+            inputValue={formData.userName}
+            setInputValue={handleChange}
             inputPlaceholder={'Enter User Name'}
             inputType='text'
+            readOnly={true}
           />
           <TextField 
             fieldName=''
-            inputValue={phoneNumber}
-            setInputValue={setPhoneNumber}
+            name='phoneNo'
+            inputValue={formData.phoneNo}
+            setInputValue={handleChange}
             inputPlaceholder={"Enter your contact number"}
             inputType='number'
           />   
             <TextField 
               fieldName=''
-              inputValue={firstName}
-              setInputValue={setFirstName}
+              name='firstName'
+              inputValue={formData.firstName}
+              setInputValue={handleChange}
               inputPlaceholder={'Enter First Name'}
               inputType='text'
             />
             <TextField 
               fieldName=''
-              inputValue={lastName}
-              setInputValue={setLastName}
+              name='lastName'
+              inputValue={formData.lastName}
+              setInputValue={handleChange}
               inputPlaceholder={"Enter Last name"}
               inputType='text'
             />   

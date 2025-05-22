@@ -8,6 +8,8 @@ import {useNavigate} from 'react-router-dom'
 import {ApiCalls} from '../../../api/apiCalls.js';
 
 function Login() {
+
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
@@ -20,7 +22,8 @@ function Login() {
   };
 
   const handleLogin = () =>{
-    ApiCalls.handleLogin(formData.email, formData.password, navigate);
+    setLoading(true);
+    ApiCalls.handleLogin(formData.email, formData.password, navigate, setLoading);
   }
   return (
     <div className='login'>
@@ -46,7 +49,7 @@ function Login() {
             inputPlaceholder = 'Enter your Email Id'
           />
           <CustomButton
-            btnText="Login" onClick={handleLogin}/>
+            btnText="Login" onClick={handleLogin} loading={loading}/>
           <div className="register-text">
             <p>Don't have an account?</p>
             <p className='click-register' onClick={() => navigate('/signup')}>Click to Register</p>

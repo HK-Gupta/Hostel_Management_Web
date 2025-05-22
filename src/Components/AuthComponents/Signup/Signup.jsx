@@ -9,6 +9,8 @@ import {useNavigate} from 'react-router-dom'
 import { ApiCalls } from '../../../api/apiCalls';
 
 function Signup() {
+
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         userName: '',
@@ -27,6 +29,7 @@ function Signup() {
     };
 
     const handleUserRegistration = () =>{
+        setLoading(true);
         ApiCalls.registerStudent(formData, navigate);
     }
 
@@ -90,7 +93,7 @@ function Signup() {
                 roomNumber={formData.roomNumber} 
                 setFormData={setFormData}/>
             <CustomButton
-                btnText="Register" onClick={handleUserRegistration}/>
+                btnText="Register" onClick={handleUserRegistration} loading={loading}/>
             <div className="register-text">
                 <p>Don't have an account?</p>
                 <p className='click-register' onClick={() => navigate('/login')}>Click to Login</p>

@@ -70,3 +70,18 @@
     justify-content: space-between;
     align-content: space-between;
 }
+.hostel-fees .spinner {
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid #000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }

@@ -17,11 +17,13 @@
     border-radius: 35px;
     display: flex;
     width: 70%;
+    margin-bottom: 5%;
     flex-direction: column;
     padding: 20px;
 }
 .all-issues .div-row {
     display: flex;
+    margin-bottom: 10px;
 }
 .all-issues .left-col{
     display: flex;

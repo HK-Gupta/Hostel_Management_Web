@@ -1,7 +1,7 @@
 import React from 'react'
 import './TextField.css'
 
-function TextField({fieldName, inputValue, setInputValue, inputPlaceholder, inputType, name}) {
+function TextField({fieldName, inputValue, setInputValue, inputPlaceholder, inputType, name, readOnly=false}) {
   return (
     <div className='text-field'>
         <p>{fieldName}</p>
@@ -12,6 +12,7 @@ function TextField({fieldName, inputValue, setInputValue, inputPlaceholder, inpu
             value={inputValue} 
             onChange={setInputValue}
             placeholder={inputPlaceholder} 
+            readOnly = {readOnly}
         />
     </div>
   )

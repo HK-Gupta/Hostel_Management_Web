@@ -1,16 +1,29 @@
-.staff-members{
+.staff-member {
     display: flex;
-    width: 100%;
-    margin: 15px 0;
-}
-.staff-members .column-staffs{
-    display: flex;
-    width: 100%;
-    align-items: start;
     justify-content: center;
+    align-items: center;
+    width: 100%;
 }
-.staff-members .row-staff {
-    width: 90%;
+.center {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+.staff-grid-container {
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; 
+  padding: 20px;
+  justify-content: center;
+}
+.staff-grid-container .staff-card {
+    width: 95%;
+}
+@media (max-width: 1000px) {
+  .staff-grid-container {
+    grid-template-columns: 1fr;
+  }
 }
 

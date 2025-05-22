@@ -16,8 +16,8 @@ function UserDetails() {
                     <p>{user.firstName} {user.lastName}</p>
                 </div>
                 <div className='block-room-no'>
-                    <p>Block No.: {user.blockNumber}</p>
-                    <p>Room No.: {user.roomNumber}</p>
+                    <p>Block No: {user.blockNumber}</p>
+                    <p>Room No: {user.roomNumber}</p>
                 </div>
             </div>
             <div className="right-part">

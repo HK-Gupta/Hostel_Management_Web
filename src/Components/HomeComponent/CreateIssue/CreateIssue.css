@@ -12,3 +12,9 @@
     font-size: 25px;
     font-weight: 600;
 } 
+.create-issue .progress {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
